@@ -10,10 +10,15 @@ import { PokedexService } from './services/pokedex.service';
 })
 export class AppComponent {
   public pokemon$: Observable<Pokemon[]> | undefined;
+  public selectedPokemon: Pokemon | undefined;
 
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit() {
     this.pokemon$ = this.pokedexService.getPokemon();
+  }
+
+  onPokemonSelectedInList(pokemon: Pokemon) {
+    this.selectedPokemon = pokemon;
   }
 }
