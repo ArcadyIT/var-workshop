@@ -42,9 +42,18 @@ export class AppComponent {
    * Called when a pokemon is caught in the pokemon detail view.
    * Adds the pokemon ID to the selectedPokemonIds array.
    *
+   * Note: For learning purposes, this function contains a check
+   *       to fail catching the pokemon when the minutes are uneven.
+   *
    * @param pokemon The caught pokemon.
    */
   onPokemonCaught(pokemon: Pokemon) {
+    let minutes = new Date().getMinutes();
+    if (minutes % 2 !== 0) {
+      console.log('failed to catch pokemon');
+      return;
+    }
+
     this.selectedPokemonIds.push(pokemon.id);
   }
 }
