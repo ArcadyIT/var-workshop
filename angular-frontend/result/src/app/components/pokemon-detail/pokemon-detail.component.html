@@ -6,5 +6,10 @@
     [src]="selectedPokemon.sprites.front_default"
   />
 
-  <button>Throw Poké Ball</button>
+  <button
+    (click)="onCatchButtonClicked()"
+    [disabled]="selectedPokemonIds.indexOf(selectedPokemon.id) >= 0"
+  >
+    Throw Poké Ball
+  </button>
 </div>

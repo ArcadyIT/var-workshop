@@ -10,7 +10,8 @@ import { PokedexService } from './services/pokedex.service';
 })
 export class AppComponent {
   public pokemon$: Observable<Pokemon[]> | undefined;
-  public selectedPokemon: Pokemon | undefined;
+  public selectedPokemonIds: number[] = [];
+  public selectedPokemonDetail: Pokemon | undefined;
 
   constructor(private pokedexService: PokedexService) {}
 
@@ -19,6 +20,10 @@ export class AppComponent {
   }
 
   onPokemonSelectedInList(pokemon: Pokemon) {
-    this.selectedPokemon = pokemon;
+    this.selectedPokemonDetail = pokemon;
+  }
+
+  onPokemonCaught(pokemon: Pokemon) {
+    this.selectedPokemonIds.push(pokemon.id);
   }
 }

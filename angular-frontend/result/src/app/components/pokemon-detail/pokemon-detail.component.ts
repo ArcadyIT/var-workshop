@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from 'src/app/data/model';
 
 @Component({
@@ -8,4 +8,11 @@ import { Pokemon } from 'src/app/data/model';
 })
 export class PokemonDetailComponent {
   @Input() selectedPokemon: Pokemon | undefined;
+  @Input() selectedPokemonIds: number[] = [];
+
+  @Output() pokemonCaught = new EventEmitter<Pokemon>();
+
+  onCatchButtonClicked() {
+    this.pokemonCaught.emit(this.selectedPokemon);
+  }
 }

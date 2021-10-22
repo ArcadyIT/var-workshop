@@ -8,10 +8,11 @@ import { Pokemon } from 'src/app/data/model';
 })
 export class PokemonOverviewComponent {
   @Input() pokemon: Pokemon[] = [];
+  @Input() selectedPokemonIds: number[] = [];
 
-  @Output() onPokemonSelected = new EventEmitter<Pokemon>();
+  @Output() pokemonSelected = new EventEmitter<Pokemon>();
 
   onPokemonClicked(pokemon: Pokemon) {
-    this.onPokemonSelected.emit(pokemon);
+    this.pokemonSelected.emit(pokemon);
   }
 }

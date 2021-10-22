@@ -1,9 +1,15 @@
 <div class="page-layout" *ngIf="pokemon$ | async as pokemonList; else loading">
   <app-pokemon-overview
     [pokemon]="pokemonList"
-    (onPokemonSelected)="onPokemonSelectedInList($event)"
+    [selectedPokemonIds]="selectedPokemonIds"
+    (pokemonSelected)="onPokemonSelectedInList($event)"
   ></app-pokemon-overview>
-  <app-pokemon-detail [selectedPokemon]="selectedPokemon"></app-pokemon-detail>
+
+  <app-pokemon-detail
+    [selectedPokemon]="selectedPokemonDetail"
+    [selectedPokemonIds]="selectedPokemonIds"
+    (pokemonCaught)="onPokemonCaught($event)"
+  ></app-pokemon-detail>
 </div>
 
 <ng-template #loading>
