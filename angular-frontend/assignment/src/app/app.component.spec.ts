@@ -35,7 +35,7 @@ describe('AppComponent', () => {
     const component = fixture.componentInstance;
 
     // act
-    component.ngOnInit();
+    // TODO: Implement test
 
     // assert
     expect(pokedexServiceSpy.getPokemon).toHaveBeenCalled();
@@ -47,11 +47,12 @@ describe('AppComponent', () => {
     const component = fixture.componentInstance;
     const testPokemon = { id: 1337 } as Pokemon;
 
+    // TODO: Implement test
     // act
-    component.onPokemonSelectedInList(testPokemon);
+    // ..
 
     // assert
-    expect(component.selectedPokemonDetail).toEqual(testPokemon);
+    // ..
   });
 
   it('should catch a pokemon, in uneven minutes only', () => {
@@ -61,14 +62,11 @@ describe('AppComponent', () => {
     const testPokemon = { id: 1337 } as Pokemon;
     const currentMinute = new Date().getMinutes();
 
+    // TODO: Implement test
     // act
-    component.onPokemonCaught(testPokemon);
+    // ...
 
     // assert
-    if (currentMinute % 2 === 0) {
-      expect(component.selectedPokemonIds).toContain(testPokemon.id);
-    } else {
-      expect(component.selectedPokemonIds).toEqual([]);
-    }
+    // ...
   });
 });

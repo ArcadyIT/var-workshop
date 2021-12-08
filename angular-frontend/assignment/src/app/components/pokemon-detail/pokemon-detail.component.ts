@@ -13,14 +13,12 @@ export class PokemonDetailComponent {
   @Input() selectedPokemon: Pokemon | undefined;
   @Input() selectedPokemonIds: number[] = [];
 
-  @Output() pokemonCaught = new EventEmitter<Pokemon>();
-
   /**
    * Called when the Catch-button is clicked, and
    * forwards the currently selected pokemon as an
    * event to the parent component.
    */
   onCatchButtonClicked() {
-    this.pokemonCaught.emit(this.selectedPokemon);
+    // TODO: Emit a new output event when the catch button was clicked
   }
 }

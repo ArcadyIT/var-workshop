@@ -48,12 +48,8 @@ export class AppComponent {
    * @param pokemon The caught pokemon.
    */
   onPokemonCaught(pokemon: Pokemon) {
-    let minutes = new Date().getMinutes();
-    if (minutes % 2 !== 0) {
-      console.log('failed to catch pokemon');
-      return;
-    }
-
-    this.selectedPokemonIds.push(pokemon.id);
+    // TODO: Check if new Date.getMinutes() is even
+    //       - if even -> console log and return
+    //       - if uneven -> add pokemon ID to selectedPokemonIds
   }
 }

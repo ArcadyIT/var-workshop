@@ -1,9 +1,7 @@
-<div
-  class="pokemon-in-list"
-  *ngFor="let pokemon of pokemon"
-  (click)="onPokemonClicked(pokemon)"
->
-  <h4>{{ pokemon.name }}</h4>
-  <img [alt]="pokemon.name" [src]="pokemon.sprites.front_default" />
-  <h5 *ngIf="selectedPokemonIds.indexOf(pokemon.id) >= 0">In your team!</h5>
+<!-- TODO: Render div.pokemon-in-list for each pokemon -->
+<div class="pokemon-in-list">
+  <h4><!-- Pokemon name goes here... --></h4>
+  <img src="Pokemon sprite URL goes here" />
+  <h5>In your team!</h5>
+  <!-- TODO: Show only if pokemon is caught-->
 </div>
