@@ -1,0 +1,15 @@
+<div *ngIf="selectedPokemon">
+  <h4>{{ selectedPokemon.name }}</h4>
+
+  <img
+    [alt]="selectedPokemon.name"
+    [src]="selectedPokemon.sprites.front_default"
+  />
+
+  <button
+    (click)="onCatchButtonClicked()"
+    [disabled]="selectedPokemonIds.indexOf(selectedPokemon.id) >= 0"
+  >
+    Throw Poké Ball
+  </button>
+</div>
