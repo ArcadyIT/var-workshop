@@ -1,0 +1,12 @@
+.c-pokemon-list {
+  display: flex;
+}
+.c-pokemon-summary {
+  cursor: pointer;
+}
+.c-pokemon-detail {
+  margin-left: 15rem;
+}
+.c-pokemon-detail .visual {
+  width: 200px;
+}
